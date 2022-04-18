@@ -10,6 +10,7 @@ import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GithubRequestService } from './github-http/github-request.service';
+import { HighlightDirective } from './highlight.directive';
 // import { UpperCasePipe } from '@angular/common';
 
 
@@ -19,6 +20,7 @@ import { GithubRequestService } from './github-http/github-request.service';
     DateCountPipe,
     SearchComponent,
     NavbarComponent,
+    HighlightDirective,
   
     // UpperCasePipe,
   ],
