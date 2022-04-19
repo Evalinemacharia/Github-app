@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+ import { BrowserModule } from '@angular/platform-browser';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DateCountPipe } from './date-count.pipe'
+//  import { DateCountPipe } from './date-count.pipe'
 import { SearchComponent } from './search/search.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
@@ -11,13 +11,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GithubRequestService } from './github-http/github-request.service';
 import { HighlightDirective } from './highlight.directive';
-// import { UpperCasePipe } from '@angular/common';
+//  import { UpperCasePipe } from '@angular/common';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DateCountPipe,
+    //  DateCountPipe,
     SearchComponent,
     NavbarComponent,
     HighlightDirective,
@@ -25,13 +25,14 @@ import { HighlightDirective } from './highlight.directive';
     // UpperCasePipe,
   ],
   imports: [
-    BrowserModule,
+     BrowserModule,
     AppRoutingModule,
     NgProgressHttpClientModule,
     NgProgressModule.forRoot(),
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    // DateCountPipe,
   ],
   providers: [GithubRequestService],
   bootstrap: [AppComponent]
