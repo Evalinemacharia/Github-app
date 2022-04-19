@@ -1,9 +1,9 @@
-<!-- <p>search works!</p> -->
-<!-- <form class="w-50">
+ <!-- <p>search works!</p>  -->
+ <form class="w-50">
     <input type="text" class="form-control" placeholder="Enter github username you want to search..." [(ngModel)]="username" name="username"  style="text-align:center">
     <button (click)="findUser()">Search</button>
 </form>
-<div *ngIf = "user">
+<!-- <div *ngIf = "user">
     <div class="panel panel-default">
         <div class="panel- heading">
             <h3 class="panel-title" style="font-size: 20px;"><strong>GitHub Name: {{user.name}}</strong></h3> 
@@ -11,7 +11,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12"></div>
-                 <img class="img-thumbnail" src="{{user.avatar_url}}"> -->
+                 <img class="img-thumbnail" src="{{user.avatar_url}}"> --> -->
              <!-- <a class="btn btn-default btn-block" target="_blank" href="{{user.html_url}}">View Profile</a> -->
           <!-- </div>
           <div class="col-md-8 col-sm-8 col-xs-12">
@@ -52,7 +52,7 @@
     <P>following {{user.following}}</P>
     <P>followers {{user.followers}}</P>
     <a href="{{user.html_url}}"> view my profile</a> -->
-</div>
+
 <div *ngIf="user">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -94,30 +94,7 @@
         </div>
       </div>
     </div>
-  <div class="container" style="padding: right 500px;">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title" style="text-align:center"><strong>User Repos</strong></h3>
-      </div>
-      <div class="panel-body">
-        <div *ngFor="let repo of repo">
-          <div class="row">
-            <div class="col-md-9">
-              <h4>
-                <a target="_blank" href="{{repo.html_url}}">{{repo.name}}</a>
-              </h4>
-              <p>{{repo.description}}</p>
-            </div>
-            <div class="col-md-3">
-              <span class="label label-default">{{repo.watchers}} Watchers</span>
-              <span class="label label-primary">{{repo.forks}} Forks</span>
-            </div>
-          </div>
-          <hr>
-        </div>
-      </div>
-    </div>
-  </div>
+  
   </div>
 <div class="container" style="text-align: center;">
     <div class="row" >
@@ -142,13 +119,6 @@
         </div>
     </div>
 </div>
-<!-- <div *ngFor="let myrepo of repo">
-    <p>{{myrepo.name}}</p>
-    <p>{{myrepo.description}}</p>
-    <p>{{myrepo.create_at}}</p>
-    <a href="{{myrepo.html_url}}"> check my repo</a>
-
-</div> -->
 
 <div *ngIf="user">
     <div class="panel panel-default">
