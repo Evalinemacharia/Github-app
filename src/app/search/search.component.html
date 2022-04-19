@@ -1,5 +1,5 @@
 <!-- <p>search works!</p> -->
-<form class="w-50">
+<!-- <form class="w-50">
     <input type="text" class="form-control" placeholder="Enter github username you want to search..." [(ngModel)]="username" name="username"  style="text-align:center">
     <button (click)="findUser()">Search</button>
 </form>
@@ -11,9 +11,60 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12"></div>
-                <img class="img-thumbnail" src="{{user.avatar_url}}">
+                 <img class="img-thumbnail" src="{{user.avatar_url}}"> -->
+             <!-- <a class="btn btn-default btn-block" target="_blank" href="{{user.html_url}}">View Profile</a> -->
+          <!-- </div>
+          <div class="col-md-8 col-sm-8 col-xs-12">
+             <div class="stats">
+              <p>{{user.bio}}</p>
+              <span class="label label-default">{{user.public_repos}} Public Repos</span>
+              <span class="label label-success">{{user.followers}} Followers</span>
+               <span class="label label-info">{{user.following}} Following</span> 
+              <span class="label label-danger">{{user.company}}</span>
+              <span class="label label-danger">{{user.type}}</span> 
+            </div> 
+            <br/>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <strong>Username: </strong>{{user.name}}
+              </li>
+              <li class="list-group-item">
+                <strong>Location: </strong>{{user.location}}
+              </li>
+              <li class="list-group-item">
+                <strong>Email: </strong>{{user.email}}
+              </li>
+              <li class="list-group-item">
+                <strong>Member Since: </strong>{{user.created_at}}
+              </li>
+            </ul>
+          </div>
+
+            </div>
+
+        </div> -->
+    <!-- </div>   -->
+    <!-- <div class="image-cropper">
+    <img src="{{user.avatar_url}}" alt="avatar" class="profile-pic">
+    </div>
+    <P>name {{user.name}}</P>
+    <P>bio {{user.bio}}</P>
+    <P>following {{user.following}}</P>
+    <P>followers {{user.followers}}</P>
+    <a href="{{user.html_url}}"> view my profile</a> -->
+</div>
+<div *ngIf="user">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="font-size: 20px;"><strong>GitHub Name: {{user.name}}</strong></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <img class="img-thumbnail" src="{{user.avatar_url}}">
             <a class="btn btn-default btn-block" target="_blank" href="{{user.html_url}}">View Profile</a>
           </div>
+  
           <div class="col-md-8 col-sm-8 col-xs-12">
             <div class="stats">
               <p>{{user.bio}}</p>
@@ -23,18 +74,51 @@
               <span class="label label-danger">{{user.company}}</span>
               <span class="label label-danger">{{user.type}}</span> 
             </div>
-
-            </div>
-
+          
+            <br/>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <strong>Username: </strong>{{user.name}}
+              </li>
+              <li class="list-group-item">
+                <strong>Location: </strong>{{user.location}}
+              </li>
+              <li class="list-group-item">
+                <strong>Email: </strong>{{user.email}}
+              </li>
+              <li class="list-group-item">
+                <strong>Member Since: </strong>{{user.created_at}}
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
-    <img src="{{user.avatar_url}}" alt="">
-    <P>name {{user.name}}</P>
-    <P>bio {{user.bio}}</P>
-    <P>following {{user.following}}</P>
-    <P>followers {{user.followers}}</P>
-    <a href="{{user.html_url}}"> view my profile</a>
-</div>
+  <div class="container" style="padding: right 500px;">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center"><strong>User Repos</strong></h3>
+      </div>
+      <div class="panel-body">
+        <div *ngFor="let repo of repo">
+          <div class="row">
+            <div class="col-md-9">
+              <h4>
+                <a target="_blank" href="{{repo.html_url}}">{{repo.name}}</a>
+              </h4>
+              <p>{{repo.description}}</p>
+            </div>
+            <div class="col-md-3">
+              <span class="label label-default">{{repo.watchers}} Watchers</span>
+              <span class="label label-primary">{{repo.forks}} Forks</span>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 <div class="container" style="text-align: center;">
     <div class="row" >
         <div class="col-md-6" *ngFor="let myrepo of repo" appHighlight>
